@@ -1,0 +1,24 @@
+name = "{{ cookiecutter.project_slug }}"
+
+[logging]
+
+[pipeline]
+updateInterval = 10
+
+[integrations]
+datasets = []
+
+[daemon]
+enable = true
+allowIpython = false
+server = "localhost"
+port = 20202
+mode = "detached"
+uploadInterval = 10
+mute = true
+
+[integrations.environment]
+gpus = "auto"
+
+[daemon.launcher]
+port = 20202
