@@ -1,0 +1,33 @@
+defaults:
+  - override hydra/sweeper: optuna
+
+model:
+  in_channels: 1
+  num_classes: 10
+  hidden_size: 50
+
+optimizer:
+  lr: 0.001
+  momentum: 0.9
+
+data:
+  root: "./datasets"
+  batch_size: 300
+  num_workers: 4
+
+train:
+  epochs: 2
+
+mlflow:
+  runname: "mnist"
+
+hydra:
+  sweeper:
+    direction: maximize
+    study_name: mnist
+    storage: null
+    n_trials: 20
+    n_jobs: 2
+    sampler: 
+      _target_: optuna.samplers.TPESampler
+      seed: 114514

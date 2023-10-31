@@ -1,0 +1,9 @@
+.vscode
+
+__pycache__/
+
+{{ cookiecutter.project_slug }}/datasets/
+
+{{ cookiecutter.project_slug }}/mlruns/
+
+{{ cookiecutter.project_slug }}/multirun/
